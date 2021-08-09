@@ -1,0 +1,41 @@
+.dndflow {
+  flex-direction: column;
+  display: flex;
+  height: 100%;
+  flex-direction: row;
+}
+
+.dndflow aside {
+  border: 1px solid rgb(209, 180, 180);
+  padding: 15px 10px;
+  font-size: 12px;
+  background: #f3f7f6;
+  height: 620px;
+  width: 250px;
+  margin: 0 auto;
+  border-radius: 0 0 7px 0;
+  
+}
+
+.dndflow aside > * {
+    padding: 10px;
+    border-radius: 3px;
+    
+    font-size: 17px;
+    color: #222;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+  margin-bottom: 10px;
+  cursor: grab;
+}
+
+.dndflow aside .description {
+  margin-bottom: 10px;
+}
+
+.dndflow .reactflow-wrapper {
+  flex-grow: 1;
+  height: 90vh;
+}
+
