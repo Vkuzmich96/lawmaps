@@ -12,7 +12,21 @@ import ReactFlow, {
 
 import { Sidebar } from "./Sidebar";
 
-const initialElements = [{}];
+const initialElements = [
+  {
+    id: '1',
+    type: 'input',
+    data: { label: 'Node A' },
+    position: { x: 250, y: 0 },
+  },
+  {
+    id: '2',
+    data: { label: 'Node B' },
+    position: { x: 100, y: 200 },
+  },
+ 
+  { id: 'e1-2', source: '1', target: '2', label: 'updatable edge' },
+];;
 
 let id = 0;
 const getId = () => `dndnode_${id++}`;
@@ -20,7 +34,7 @@ const getId = () => `dndnode_${id++}`;
 function App() {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
-  const [element, setElements] = useState(initialElements);
+  const [elements, setElements] = useState(initialElements);
   const onConnect = () =>
     setElements((els) =>
       addEdge(
@@ -73,7 +87,7 @@ function App() {
         <Controls />
         <div className="reactflow-wrapper" ref={reactFlowWrapper}>
           <ReactFlow
-            elements={element}
+            elements={elements}
             onConnect={onConnect}
             onElementsRemove={onElementsRemove}
             onLoad={onLoad}

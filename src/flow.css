@@ -123,15 +123,15 @@
   width: 230px;
   box-shadow: 0px 0px 10px -4px;
 }
-.react-flow__node:hover{
+/* .react-flow__node:hover{
     box-shadow: 0px 0px 10px -4px;
-}
+} */
 
 .react-flow__nodesselection {
   z-index: 3;
   position: absolute;
-  width: 90vw;
-  height: 90vh;;
+  width: 10vw;
+  height: 10vh;;
   top: 0;
   left: 0;
   transform-origin: left top;
@@ -152,7 +152,7 @@
     pointer-events: all;
   } */
 }
-.connectable {
+.react-flow__handle.connectable {
     pointer-events: all;
 }
 .react-flow__handle-bottom {
@@ -167,14 +167,14 @@
 }
 
 .react-flow__handle-left {
-  top: 50%;
+  top: 50px;
   left: -4px;
   transform: translate(0, -50%);
 }
 
 .react-flow__handle-right {
   right: -4px;
-  top: 50%;
+  top: 50px;
   transform: translate(0, -50%);
 }
 
