@@ -38,4 +38,55 @@
   flex-grow: 1;
   height: 90vh;
 }
+.react-flow__handle {
+  pointer-events: none;
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #555;
+  border: 1px solid #fff;
+  border-radius: 50%
+}
+.react-flow__node-output {
+  background: #fff;
+  border-color: #ff0072;
+  width: 250px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 17px;
+  color: #222;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.react-flow__node-input {
+  background: #fff;
+  border:2px solid #36242c;
+  width: 250px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 17px;
+  color: #222;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.react-flow__node-default {
+  background: #fff;
+  border:2px dashed #2a4127;
+  width: 250px;
+  height: 50px;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 17px;
+  color: #222;
+  cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
