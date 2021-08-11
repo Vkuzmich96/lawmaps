@@ -43,15 +43,14 @@
 }
 
 .react-flow__edge {
-  pointer-events: visibleStroke;
+ 
+  cursor:pointer;
 
-  /* &.inactive {
-    pointer-events: none;
-  } */
+  
 }
 .react-flow__edge.inactive {
     pointer-events: visibleStroke;
-    /* pointer-events: none; */
+    
 }
 
 

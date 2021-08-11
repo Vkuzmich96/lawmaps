@@ -1,7 +1,8 @@
 import { ACTIONS } from "../constant";
 
 const defaultState = {
-   nodes : []
+   nodes : [],
+   edges : []
   };
   export function lawmapReducer(state  , action) {
     switch (action.type) {
@@ -10,6 +11,10 @@ const defaultState = {
 
         return {...state, nodes: newNodes }
        
+      }
+      case ACTIONS.ADD_EDGE: {
+        let newEdges = [...state.edges, action.params, action.params.label='Я люблю React)))' ]
+       return {...state, edges: newEdges}
       }
 
   

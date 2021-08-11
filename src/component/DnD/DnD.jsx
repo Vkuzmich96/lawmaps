@@ -22,7 +22,14 @@ export const DnD = () => {
   const reactFlowWrapper = useRef(null);
   const [reactFlowInstance, setReactFlowInstance] = useState(null);
   const [elements, setElements] = useState(initialElements);
-  const onConnect = (params) => setElements((els) => addEdge(params, els));
+
+
+  const onConnect = (params) => setElements((els) =>{
+    dispatch({type: ACTIONS.ADD_EDGE, params})
+    return addEdge(params, els)});
+  
+
+    
   const onElementsRemove = (elementsToRemove) =>
     setElements((els) => removeElements(elementsToRemove, els));
 
@@ -33,6 +40,7 @@ export const DnD = () => {
     event.preventDefault();
     event.dataTransfer.dropEffect = "move";
   };
+  
 
   const onDrop = (event) => {
     event.preventDefault();
@@ -53,9 +61,12 @@ export const DnD = () => {
     setElements((els) => els.concat(newNode));
     dispatch({type: ACTIONS.CHECK_IS_WORK, newNode})
   };
+  const checkAll = (event) => {
+    console.log(event.target)
+  }
 
   return (
-    <div className="dndflow">
+    <div onClick={checkAll} className="dndflow">
       <ReactFlowProvider>
         <Background style={{ position: "absolute", zIndex: "-100" }} />
         <Sidebar />
