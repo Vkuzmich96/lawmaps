@@ -4,7 +4,7 @@ const defaultState = {
    nodes : [],
    edges : []
   };
-  export function lawmapReducer(state  , action) {
+  export function lawmapReducer( state = defaultState  , action) {
     switch (action.type) {
       case ACTIONS.CHECK_IS_WORK: {
       let newNodes = [...state.nodes, action.newNode]
@@ -19,6 +19,6 @@ const defaultState = {
 
   
       default:
-        return defaultState;
+        return state; 
     }
   }

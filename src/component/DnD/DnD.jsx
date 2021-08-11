@@ -48,8 +48,8 @@ export const DnD = () => {
     const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
     const type = event.dataTransfer.getData("application/reactflow");
     const position = reactFlowInstance.project({
-      x: event.clientX - reactFlowBounds.left - 115,
-      y: event.clientY - reactFlowBounds.top - 22,
+      x: event.clientX - reactFlowBounds.left ,
+      y: event.clientY - reactFlowBounds.top ,
     });
     const newNode = {
       id: getId(),
