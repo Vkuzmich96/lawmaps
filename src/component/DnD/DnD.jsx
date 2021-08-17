@@ -9,9 +9,9 @@ import ReactFlow, {
 } from "react-flow-renderer";
 import { useDispatch } from "react-redux";
 import { Sidebar } from "../../Sidebar";
-import { useEffect } from "react";
+
 import { ACTIONS } from "../../redux/constant";
-import { Form } from "../Form/Form";
+
 const initialElements = [];
 let id = 0;
 
@@ -47,28 +47,39 @@ export const DnD = () => {
     const reactFlowBounds = reactFlowWrapper.current.getBoundingClientRect();
     const type = event.dataTransfer.getData("application/reactflow");
     const position = reactFlowInstance.project({
-      x: event.clientX - reactFlowBounds.left,
-      y: event.clientY - reactFlowBounds.top,
+      x: event.clientX - reactFlowBounds.left - 80,
+      y: event.clientY - reactFlowBounds.top - 20,
     });
     const newNode = {
       id: getId(),
       type,
       position,
-      data: { label: `${type} node` },
+      data: {
+        label: (
+          <>
+            <h2>{`${type} node`}</h2>
+            <hr/>
+            <div>{`${type} node`}</div>
+            <button style={{width:"150px",height:"25px"}}>option</button>
+          </>
+        ),
+      },
     };
 
     setElements((els) => els.concat(newNode));
     dispatch({ type: ACTIONS.CHECK_IS_WORK, newNode });
   };
+  const ref = useRef(null);
+  const handleRef = () => {
+    ref.current.focus();
+  };
+
+  let nodeId;
+
   const checkAll = (event) => {
-    if (
-      event.target.className ===
-        "react-flow__node react-flow__node-default selected selectable" ||
-      "react-flow__node react-flow__node-default selected selectable" 
-    ) {
-      console.log("e");
-    } else {
-      console.log(event.target.className);
+    if (event.target.attributes[1] !== undefined) {
+      nodeId = event.nativeEvent.path[0].dataset.id;
+      dispatch({ type: ACTIONS.CLICKED_NODE, nodeId });
     }
   };
 
@@ -76,7 +87,7 @@ export const DnD = () => {
     <div onClick={checkAll} className="dndflow">
       <ReactFlowProvider>
         <Background style={{ position: "absolute", zIndex: "-100" }} />
-        <Sidebar onDrop={onDrop} />
+        <Sidebar handleRef={handleRef} customRef={ref} onDrop={onDrop} />
 
         <Controls />
         <div className="reactflow-wrapper" ref={reactFlowWrapper}>

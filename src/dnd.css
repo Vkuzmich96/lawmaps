@@ -1,41 +1,43 @@
 .dndflow {
-  flex-direction: column;
-  display: flex;
-  height: 90vw;
-  flex-direction: row;
+ 
 }
 
 .dndflow aside {
   border: 1px solid rgb(209, 180, 180);
-  padding: 15px 10px;
+  padding: 1px 1px;
   font-size: 12px;
   background: #f3f7f6;
-  height: 620px;
-  width: 250px;
+  height: 30px;
+  width: 100vw;
   margin: 0 auto;
-  border-radius: 0 0 7px 0;
+ 
+  display: flex;
+  justify-content: space-around;
+  
 }
 
-.dndflow aside > * {
-  padding: 10px;
-  border-radius: 3px;
 
-  font-size: 17px;
+.dndflow aside > * {
+  
+  border-radius: 3px;
+  width: 33vw;
+  font-size: 18px;
   color: #222;
   text-align: center;
   border-width: 1px;
   border-style: solid;
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
   cursor: grab;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.dndflow aside .description {
-  margin-bottom: 10px;
-}
+
 
 .dndflow .reactflow-wrapper {
   flex-grow: 1;
-  height: 90vh;
+  height: 95vh;
 }
 .react-flow__handle {
   pointer-events: none;
@@ -49,44 +51,47 @@
 .react-flow__node-output {
   background: #fff;
   border-color: #ff0072;
-  width: 250px;
-  height: 50px;
-  padding: 5px;
+  min-width: 250px;
+  min-height: 50px;
+  padding: 2px;
   border-radius: 3px;
   font-size: 17px;
   color: #222;
   cursor: grab;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
+  word-break: break-all;
 }
 .react-flow__node-input {
   background: #fff;
   border: 2px solid #36242c;
-  width: 250px;
-  height: 50px;
+  min-width: 250px;
+  min-height: 50px;
   padding: 5px;
   border-radius: 3px;
   font-size: 17px;
   color: #222;
   cursor: grab;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
+  word-break: break-all;
 }
 .react-flow__node-default {
   background: #fff;
   border: 2px dashed #2a4127;
-  width: 250px;
-  height: 50px;
+  min-width: 250px;
+  min-height: 50px;
   padding: 5px;
   border-radius: 3px;
   font-size: 17px;
   color: #222;
   cursor: grab;
-  display: flex;
+  /* display: flex; */
   align-items: center;
   justify-content: center;
+  word-break: break-all;
 }
 
 .react-flow__edge {

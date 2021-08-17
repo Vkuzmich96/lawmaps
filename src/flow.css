@@ -1,6 +1,6 @@
 .react-flow {
-    width: 80vw;
-    height: 90vh;
+    width: 100vw;
+    height: 100vh;
   position: relative;
   overflow: hidden;
 }
@@ -185,7 +185,7 @@
   top: 0;
   left: 0;
   width: 90vw;
-  height: 90vh;
+  height: 100vh;
 }
 
 .react-flow__controls {
