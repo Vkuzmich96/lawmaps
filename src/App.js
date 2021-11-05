@@ -1,8 +1,4 @@
-import "./App.css";
-import { DnD } from "./component/DnD/DnD";
-
 function App() {
-
-  return <DnD/>;
+  return <h1>working</h1>;
 }
 export default App;
